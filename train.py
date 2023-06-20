@@ -2,7 +2,7 @@ import gymnasium as gym
 import torch
 import numpy as np
 import random
-from buffer import ReplayBuffer
+from buffer import Buffer
 from DQN import DQN
 from tqdm import tqdm
 import matplotlib.pyplot as plt
@@ -27,7 +27,7 @@ def train_dqn():
     np.random.seed(0)
 
     torch.manual_seed(0)
-    replay_buffer = ReplayBuffer(buffer_size)
+    replay_buffer = Buffer(buffer_size)
     state_dim = env.observation_space.shape[0]
     action_dim = env.action_space.n
     agent = DQN(state_dim, hidden_dim, action_dim, lr, gamma, epsilon,
@@ -41,7 +41,7 @@ def train_dqn():
                 state = env.reset()[0]
                 done = False
                 while not done:
-                    action = agent.take_action(state)
+                    action = agent.choose_action(state)
                     next_state, reward, terminated, truncated, _ = env.step(action)
                     done = terminated
                     replay_buffer.add(state, action, reward, next_state, done)
