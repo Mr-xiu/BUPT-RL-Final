@@ -1,0 +1,9 @@
+lr = 2e-3
+num_episodes = 500
+hidden_dim = 128
+gamma = 0.98
+epsilon = 0.01
+target_update = 10
+buffer_size = 10000
+minimal_size = 128
+batch_size = 64
