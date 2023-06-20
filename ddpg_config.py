@@ -1,0 +1,10 @@
+actor_lr = 3e-3
+critic_lr = 3e-3
+iteration_times = 1000  # 最大游戏次数
+hidden_dim = 64
+gamma = 0.98
+update_num = 10
+buffer_size = 10000
+minimal_size = 1000
+batch_size = 64
+epsilon = 0.01  # 最小探索率
