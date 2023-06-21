@@ -3,8 +3,6 @@ import numpy as np
 
 
 class Buffer:
-    """ 经验回放池 """
-
     def __init__(self, buffer_size):
         self.buffer = []
         self.buffer_size = buffer_size
