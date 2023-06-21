@@ -1,0 +1,8 @@
+torch==2.0.1+cu118
+torchaudio==2.0.2+cu118
+torchvision==0.15.2+cu118
+gymnasium==0.28.1
+matplotlib==3.7.0
+matplotlib-inline==0.1.6
+numpy==1.23.5
+numpydoc==1.5.0
