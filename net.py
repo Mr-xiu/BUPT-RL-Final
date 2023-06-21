@@ -54,3 +54,7 @@ class ValueNetwork(torch.nn.Module):
         x = F.relu(self.fc1(cat))
         x = F.relu(self.fc2(x))
         return self.fc3(x)
+
+
+if __name__ == '__main__':
+    print(Qnet(2, 128, 3))

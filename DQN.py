@@ -39,7 +39,7 @@ class DQN:
         # 下个状态的最大Q值
         max_next_values = self.target_q_net(next_states).max(1)[0].view(-1, 1)
         targets = rewards + self.gamma * max_next_values * (1 - dones)
-        self.update_parameters(values, targets)
+        self.update_parameters(values, targets)  # 更新参数
 
     # 更新网路参数
     def update_parameters(self, values, targets):
@@ -50,7 +50,7 @@ class DQN:
         self.optimizer.step()
 
         if self.count % self.update_num == 0:
-            self.update_target()
+            self.update_target()  # 更新目标网络参数
         self.count += 1
 
     # 更新目标网络
